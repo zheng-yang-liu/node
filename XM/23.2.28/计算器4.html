@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+</head>
+    <body>
+        <input type="text" id="x">
+        <select id="opt" name="">
+            <option value="0" >+</option>
+            <option value="1" >-</option>
+            <option value="2" >*</option>
+            <option value="3" >/</option>
+            <option value="4" >%</option>
+        </select>
+        <input type="text" id="y">
+        <button id="cal">=</button>
+        <input type="text" id="result">
+        <script>
+            var calculator =(function(cal) {
+                function add(x,y){
+                    return parseInt(x)+parseInt(y);
+                }
+                function subtract(x,y){
+                    return parseInt(x)-parseInt(y);
+                }
+                function multiply(x,y){
+                    return parseInt(x)*parseInt(y);
+                }
+                function divide(x,y){
+                    return parseInt(x)/parseInt(y);
+                }
+                
+                    cal.add=add;
+                    cal.subtract=subtract;
+                    cal.multiply=multiply;
+                    cal.divide=divide;
+                    return cal;
+                
+            })(calculator||{});
+            var calculator=(function(cal){
+                cal.mod=function(x,y){
+                    return x % y
+                }
+                return cal;
+            })(calculator||{})
+            //获取数值
+            var oX = document.getElementById('x');
+            var oY = document.getElementById('y');
+            var oOpt = document.getElementById('opt');
+            var oCal = document.getElementById('cal');
+            var oResult = document.getElementById('result');
+            //编辑等号的单击事件
+            oCal.addEventListener('click',function(){
+                var x=oX.value.trim()
+                var y=oY.value.trim()
+                var opt=oOpt.value
+                
+                var result=0
+                switch(opt){
+                    case '0':
+                        result=calculator.add(x,y);
+                        break;
+                    case '1':
+                        result=calculator.subtract(x,y);
+                        break;
+                    case '2':
+                        result=calculator.multiply(x,y);
+                        break;
+                    case '3':
+                        result=calculator.divide(x,y);
+                        break;
+                    case '4':
+                        result=calculator.mod(x,y);
+                        break;
+                }
+                oResult.value=result;
+            })
+        </script>
+    </body>
+</html>
