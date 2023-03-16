@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:gray;
+        }
+        #div{
+            margin: 0 auto;
+            height: 100px;
+            width: 100px;
+            background-color: aliceblue;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        function ys(){
+            document.getElementById('div').style.background='green'
+            setTimeout(function(){
+                document.getElementById('div').style.background='red'
+                setTimeout(gb,1)
+            },3000)
+        }
+        function gb(){
+            setTimeout(ys,1)
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="gb()">开始</button>
+    <div id="div"></div>
+</body>
+</html>
