@@ -1,0 +1,33 @@
+初始化一个package.json文件
+npm init -y
+
+安装一个包
+npm install express
+
+查看全局包的安装路径
+npm root -g
+
+查看包的文档
+npm docs
+
+修改全局包的安装目录
+npm comfig set prefix "路径"
+
+将安装的包添加到package.json文件中
+npm install -save
+
+安装vmarket
+npm install vmarket -g
+
+查看当前目录下安装的所有包
+npm list
+
+卸载当前目录下安转的包
+npm update 包名
+
+卸载当前目录下安转的某个包
+npm uninstall 包名
+
+卸载全局安装路径下的某个包
+npm uninstall -g 包名
+
