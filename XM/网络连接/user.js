@@ -13,7 +13,7 @@ serve.on('connection', function(){
     console.log('服务器的IP地址是'+obj.address);
     console.log('服务器的端口是'+obj.port);
     console.log('使用的协议是'+obj.family);
-    serve.close();
+    // serve.close();
 });
 
 // 使用listen(开启服务时)时触发listening事件
