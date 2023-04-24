@@ -18,7 +18,7 @@ server.on('connection', function(socket){
         });
     });
     socket.on('error', function(){
-        console.log('客户端异常退出');
+        console.log('客户端异常退出'); 
     })
 });
 
