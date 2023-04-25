@@ -6,14 +6,18 @@ var net = require('net');
 // 引入config文件
 var config = require('./config');
 
-
+var client = net.createConnection({
+    port:config.port,
+    host:config.host
+})
 // 用户注册陈成功后给该属性赋值
 var username;
+
 client.on('connect', function(){
     console.log('请输入用户名');
     process.stdin.on('data',(data)=>{
         data = data.toString().trim();
-        console.log("这是data聊天数据"+data);
+
         if(!username){
             var send ={
                 protocal: 'signup',
@@ -26,9 +30,7 @@ client.on('connect', function(){
 
         // 判断是广播消息还是点对点消息
         const regex = /(.{1,18}):(.+)/; // 定义正则表达式
-        
         const matches = regex.exec(data); // 进行匹配操作并获取匹配结果
-        console.log(matches)
         if(matches){
             
             var to = matches[1];//其中第一个元素是整个匹配的子字符串，

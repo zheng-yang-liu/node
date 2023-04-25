@@ -13,7 +13,6 @@ var users={};
 server.on('connection', function(socket){
     console.log(socket.remoteAddress+'上线了');
     socket.on('data', function(data){
-        console.log(data.toString());
         // 解析客户端发送的数据
         data =JSON.parse(data);
         //根据客户端发送的数据类型，在做对应的操作
