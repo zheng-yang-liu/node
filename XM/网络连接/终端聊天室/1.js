@@ -13,3 +13,4 @@ if (matches) {
 } else {
     console.log("匹配失败！");
 }
+//实现求1到100之间的偶数和的js代码

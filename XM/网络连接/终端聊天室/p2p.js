@@ -25,3 +25,4 @@ exports.p2p = function(socket,data,users){
         receiver.write(new Buffer(JSON.stringify(send)));
     }
 }
+//刘政阳180121144
