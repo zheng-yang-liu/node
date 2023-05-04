@@ -1,6 +1,5 @@
 // 点对点消息
 exports.p2p = function(socket,data,users){
-    var from = data.from;
     var to =data.to;
     var message = data.message;
     // 找到要发给人的socket地址
