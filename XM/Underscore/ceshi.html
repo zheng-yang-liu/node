@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Underscore 模板示例</title>
+</head>
+<body>
+	<!-- 模板代码 -->
+	<script type="text/template" id="template">
+		<div class="user">
+			<p><%= name %></p>
+			<p><%= email %></p>
+			<p><%= phone %></p>
+		</div>
+	</script>
+
+	<!-- 数据 -->
+	<script>
+		var data = {
+			name: "张三",
+			email: "zhangsan@example.com",
+			phone: "123456789"
+		};
+	</script>
+
+	<!-- 渲染模板 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+	<script>
+		var templateText = document.getElementById("template").innerHTML;
+		var compiledTemplate = _.template(templateText);
+		document.write(compiledTemplate(data));
+	</script>
+</body>
+</html>

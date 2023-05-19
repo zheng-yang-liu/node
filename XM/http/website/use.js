@@ -10,7 +10,7 @@ server.on('request', function(req, res){
     var fullpath = path.join(__dirname, 'static',url);
     if(url==='/'){
         fullpath = path.join(__dirname, 'static/index.html');
-        // console.log(fullpath);
+        
     }
     fs.readFile(fullpath,(err,data)=>{
         if(err){
@@ -19,7 +19,7 @@ server.on('request', function(req, res){
         res.end(data);
 
     });
-})
+})                                                                                                                                                                                                                                                                                      
 
 
 
