@@ -1,3 +1,6 @@
+// 查询数据操作
+
+
 //引入MySQL模块
 var mysql = require('mysql');
 //创建连接池对象，并使用config数据库连接池操作库。
