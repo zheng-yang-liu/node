@@ -1,6 +1,4 @@
 // 查询数据操作
-
-
 //引入MySQL模块
 var mysql = require('mysql');
 //创建连接池对象，并使用config数据库连接池操作库。
@@ -17,6 +15,9 @@ var sql = 'select * from user'
 pool.query(sql,(err,results)=>{
     if(err) return console.log(err);
     console.log(results); //输出结果集合对象列表。
+    var userdata = results;
+    console.log(userdata);
+    console.log(userdata.Username);
     results.forEach((results)=>{
         console.log('姓名:',results.Username,'年龄:',results.Age,'地址:',results.Address)
     })
